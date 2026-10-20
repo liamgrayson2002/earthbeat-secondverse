@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="stylesheet" href="./style/style.css" />
+    <link
+      href="./img/earth-pixel.png"
+      rel="shortcut icon"
+      type="image/x-icon"
+    />
+    <title>Earth Beat - The Earth Information Jukebox</title>
+  </head>
+  <body>
+    <main class="wrap">
+      <header class="top">
+        <div class="logo">
+          <span class="logo-orb"></span>
+          <div>
+            <!-- <b>EARTH BEAT</b><small>THE EARTH INFORMATION JUKEBOX</small> -->
+            <img src="./img/earth-beat.png" alt="EARTH BEAT" />
+            <small>THE EARTH INFORMATION JUKEBOX</small>
+          </div>
+        </div>
+        <button id="reset" type="button">↺ RESET</button>
+      </header>
+      <section class="hero">
+        <div>
+          <div class="kicker">NASA SPACE APPS 2026 / SOLO MVP</div>
+          <h1>LISTEN TO<br />OUR PLANET</h1>
+          <p>
+            Turn Earth information into an audio experience. Select a signal,
+            press play, and hear how a changing planet can become a living
+            soundscape.
+          </p>
+          <p class="hero-note">NO API KEY REQUIRED / DEMO DATA READY</p>
+        </div>
+        <div class="earth-zone">
+          <div class="orbit"></div>
+          <img
+            class="earth"
+            src="./img/earth-pixel.png"
+            alt="Pixel-art Earth"
+          />
+        </div>
+      </section>
+      <div class="intro-card">
+        <b>MISSION:</b> Pair an Earth Information Center visual frame with
+        dynamic sonification generated in real time.
+      </div>
+      <section class="layout">
+        <article class="card">
+          <div class="card-head">
+            <div>
+              <h2>LIVE EARTH SIGNAL</h2>
+              <h3 id="modeTitle">Temperature signal</h3>
+            </div>
+            <span class="tag">01 / 03</span>
+          </div>
+          <div class="viz">
+            <canvas
+              id="scope"
+              width="1000"
+              height="300"
+              aria-label="Animated data waveform"
+            ></canvas>
+          </div>
+          <div class="readout">
+            <div class="metric">
+              <small>CURRENT SIGNAL</small><strong id="signal">0.00</strong>
+            </div>
+            <div class="metric">
+              <small>SOUND PITCH</small><strong id="pitch">220 Hz</strong>
+            </div>
+            <div class="metric">
+              <small>COLOR CUE</small><strong id="color">Orange</strong>
+            </div>
+          </div>
+          <div class="controls">
+            <button id="play" class="primary" type="button">
+              ▶ START SOUND</button
+            ><button id="stop" class="secondary" type="button">■ STOP</button
+            ><select id="mode" aria-label="Choose Earth signal">
+              <option value="temperature">TEMPERATURE</option>
+              <option value="rain">RAINFALL</option>
+              <option value="vegetation">VEGETATION</option></select
+            ><label for="volume">VOL</label
+            ><input
+              id="volume"
+              class="range"
+              type="range"
+              min="0"
+              max=".12"
+              step=".01"
+              value=".06"
+            />
+          </div>
+        </article>
+        <aside class="card">
+          <h2>DATA → SOUND MAP</h2>
+          <div class="mapping">
+            <div><span>Higher value</span><b>Higher pitch</b></div>
+            <div><span>Faster change</span><b>Faster pulse</b></div>
+            <div><span>Heat category</span><b>Amber color</b></div>
+            <div><span>Water / forest</span><b>Blue / green</b></div>
+          </div>
+          <p class="note">
+            Visual and audio channels work together so the data story remains
+            accessible even when one channel is unavailable.
+          </p>
+          <p class="note">
+            Click START SOUND once to allow browser audio. STOP silences the
+            generated tone.
+          </p>
+        </aside>
+      </section>
+      <footer class="footer">
+        <span>EARTH BEAT / NASA SPACE APPS 2026</span
+        ><a
+          href="https://www.spaceappschallenge.org/2026/challenges/the-earth-information-jukebox/"
+          target="_blank"
+          rel="noreferrer"
+          >OFFICIAL CHALLENGE ↗</a
+        >
+      </footer>
+    </main>
+    <script src="./javascript/app.js"></script>
+  </body>
+</html>
